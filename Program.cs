@@ -9,9 +9,9 @@ class Program
 
         List<Product> products = new List<Product>();
 
-        products.Add(new Wheat(30, 50, 3, 5, 5));
-        products.Add(new Tomato(40, 90, 4, 6, 7));
-        products.Add(new Sunflower(20, 60, 2, 4, 3));
+        products.Add(new Wheat(30, 50, 3, 5, 5, 3, 2));
+        products.Add(new Tomato(40, 90, 4, 6, 7, 2, 2));
+        products.Add(new Sunflower(20, 60, 2, 4, 3, 3, 4));
 
         List<Product> chosenProducts = new List<Product>();
 
@@ -85,5 +85,6 @@ class Program
             Console.WriteLine("Profit: " +profit);
             player.AddReward(profit);
         }
+        Console.ReadKey();
     }
 }

@@ -14,10 +14,11 @@ namespace HarvestFarm
         public int Duration { get; set; }
         public int FertilizerCost { get; set; }
         public int WaterCost { get; set; }
-
+        public int NumFertilizer { get; set; }
+        public int NumWater { get; set; }
         public int TotalCost
         {
-            get { return Cost + FertilizerCost + WaterCost; }
+            get { return FertilizerCost*NumFertilizer + WaterCost*NumWater; }
         }
 
         public abstract void Seed();

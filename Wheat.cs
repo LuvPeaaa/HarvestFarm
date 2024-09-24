@@ -11,13 +11,60 @@ namespace HarvestFarm
         public int NumFertilizer {  get; set; }
         public int NumWater { get; set; }
 
-        public Wheat(int cost, int value, int duration, int fertilizerCost, int waterCost)
+        public Wheat(int cost, int value, int duration, int fertilizerCost, int waterCost, int numfertilizer, int numwater)
         {
             Cost = cost;
             Value = value;
             Duration = duration;
             FertilizerCost = fertilizerCost;
             WaterCost = waterCost;
+            NumFertilizer = numfertilizer;
+            NumWater = numwater;
+        }
+        bool NumFer()
+        {
+            if (NumFertilizer > 1)
+            {
+                NumFertilizer--;
+                return true;
+
+            }
+            else
+            {
+
+                return false;
+            }
+        }
+        bool NumWat()
+        {
+            if (NumWater > 1)
+            {
+                NumWater--;
+                return true;
+            }
+            else
+            {
+
+                return false;
+
+            }
+
+        }
+        public void Feed()
+        {
+            do
+            {
+                Console.WriteLine("Fertilizing 1 time");
+            } while (NumFer());
+        }
+
+        public void ProvideWater()
+        {
+
+            do
+            {
+                Console.WriteLine("Watering 1 time");
+            } while (NumWat());
         }
 
         public override void Seed()
@@ -45,16 +92,6 @@ namespace HarvestFarm
             }
         }
 
-        public void Feed()
-        {
-            Console.WriteLine("Feeding Wheat.");
-            NumFertilizer++;
-        }
-
-        public void ProvideWater()
-        {
-            Console.WriteLine("Watering Wheat.");
-            NumWater++;
-        }
+        
     }
 }
